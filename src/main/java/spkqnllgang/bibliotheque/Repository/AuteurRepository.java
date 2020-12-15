@@ -8,9 +8,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import spkqnllgang.bibliotheque.Entity.Auteur;
 
 @RepositoryRestResource(path="auteur")
-public interface AuteurRepository extends JpaRepository<Auteur, Long> {
-
+public interface AuteurRepository extends JpaRepository<Auteur, Integer> {
 	Set<Auteur> findAuteurByNom(String nom);
 	Set<Auteur> findAuteurByDateOfBirth(Date dateOfBirth);
-	void deleteAuteurById(Long id);
+	void deleteAuteurById(int id);
+
 }
