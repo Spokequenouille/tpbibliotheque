@@ -7,6 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import java.util.HashSet;
+import java.util.List;
 
 import java.util.List;
 
@@ -14,8 +20,7 @@ import lombok.*;
 
 @Data
 @Entity
-@Getter
-@Setter
+@NoArgsConstructor
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +30,8 @@ public class Genre {
     private String nom;
 
     @ManyToMany(mappedBy = "genres")
-    private List<Livre> livres = new ArrayList<Livre>();
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnoreProperties
+    private Set<Livre> livres;
 
 }

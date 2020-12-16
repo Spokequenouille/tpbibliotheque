@@ -15,8 +15,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Getter
-@Setter
+@NoArgsConstructor
 public class Micheline {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +28,5 @@ public class Micheline {
 
     @OneToMany
     @JoinColumn(name = "micheline_id")
-    private List<Livre> livres = new ArrayList<Livre>();
+    private List<Livre> livres;
 }
