@@ -1,8 +1,5 @@
 package spkqnllgang.bibliotheque.Entity;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,13 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import javax.persistence.ManyToMany;
-import java.util.List;
-import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
 import lombok.*;
 
 @Data
@@ -34,7 +28,8 @@ public class Auteur {
     private Date dateOfBirth; 
 
     @ManyToMany(mappedBy = "auteurs")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnoreProperties
-    private List<Livre> livres;
+    @JsonIgnoreProperties("auteurs")
+    private List<Livre> livres= new ArrayList<>();;
 }
+
+

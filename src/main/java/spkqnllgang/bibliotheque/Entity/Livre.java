@@ -1,8 +1,5 @@
 package spkqnllgang.bibliotheque.Entity;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,18 +10,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import java.util.List;
-import java.util.Set;
+import lombok.EqualsAndHashCode;
 
 import lombok.*;
 
 @Data
 @Entity
-@NoArgsConstructor
 public class Livre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,20 +33,18 @@ public class Livre {
     @ManyToMany
     @JoinTable(
             name = "livre_genre",
-            joinColumns = @JoinColumn(name = "genre_id"),
-            inverseJoinColumns = @JoinColumn(name = "livre_id")
+            joinColumns = @JoinColumn(name = "livre_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnoreProperties("livre_genre")
+    @JsonIgnoreProperties("livres")
     private List<Genre> genres;
 
     @ManyToMany
     @JoinTable(
             name = "livre_auteur",
-            joinColumns = @JoinColumn(name = "auteur_id"),
-            inverseJoinColumns = @JoinColumn(name = "livre_id")
+            joinColumns = @JoinColumn(name = "livre_id"),
+            inverseJoinColumns = @JoinColumn(name = "auteur_id")
     )
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnoreProperties("livre_auteur")
+    @JsonIgnoreProperties("livres")
     private List<Auteur> auteurs;
 }
