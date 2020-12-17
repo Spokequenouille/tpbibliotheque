@@ -17,19 +17,11 @@ import lombok.*;
 @Data
 @Entity
 @NoArgsConstructor
-public class Auteur {
+public class Commentaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
     private int id;
     @Column(nullable = false)
-    private String nom;
-    @Column(name = "Date_Of_Birth", nullable = false)
-    private Date dateOfBirth; 
-
-    @ManyToMany(mappedBy = "auteurs")
-    @JsonIgnoreProperties("auteurs")
-    private List<Livre> livres= new ArrayList<>();
+    private String text;
 }
-
-

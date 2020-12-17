@@ -30,14 +30,6 @@ public class Livre {
     @Column(name = "Date_Of_Publication", nullable = false)
     private Date dateofpublication; 
 
-    @ManyToMany
-    @JoinTable(
-            name = "livre_genre",
-            joinColumns = @JoinColumn(name = "livre_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id")
-    )
-    @JsonIgnoreProperties("livres")
-    private List<Genre> genres;
 
     @ManyToMany
     @JoinTable(

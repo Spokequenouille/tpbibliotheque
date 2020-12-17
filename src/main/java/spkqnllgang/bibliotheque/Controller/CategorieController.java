@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import spkqnllgang.bibliotheque.Entity.Genre;
-import spkqnllgang.bibliotheque.Repository.GenreRepository;
+import spkqnllgang.bibliotheque.Entity.Categorie;
+import spkqnllgang.bibliotheque.Repository.CategorieRepository;
 @RestController
-@RequestMapping(path = "/genre")
-public class GenreController {
+@RequestMapping(path = "/categorie")
+public class CategorieController {
     @Autowired
-    private GenreRepository genreRepository;
+    private CategorieRepository categorieRepository;
 
     @GetMapping
-    public Iterable<Genre> getGenres(){
-        return genreRepository.findAll();
+    public Iterable<Categorie> getCategories(){
+        return categorieRepository.findAll();
     }
 }

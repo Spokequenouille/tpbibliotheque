@@ -23,11 +23,14 @@ public class Micheline {
     private int id;
     @Column(nullable = false)
     private String nom;
-    @Column(name = "Date_Of_Birth", nullable = false)
-    private Date dateOfBirth; 
+    @Column(nullable = false)
+    private int age;
 
     @OneToMany
-    @JsonIgnore
     @JoinColumn(name = "micheline_id")
     private List<Livre> livres;
+
+    @OneToMany
+    @JoinColumn(name = "micheline_id")
+    private List<Commentaire> commentaires;
 }
