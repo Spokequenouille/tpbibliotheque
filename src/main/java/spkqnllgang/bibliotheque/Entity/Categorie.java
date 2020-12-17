@@ -17,6 +17,8 @@ import lombok.*;
 
 @Data
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
 public class Categorie {
     @Id

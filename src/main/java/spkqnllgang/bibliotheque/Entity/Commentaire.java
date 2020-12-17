@@ -17,6 +17,8 @@ import lombok.*;
 @Data
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 public class Commentaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
