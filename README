@@ -1,2 +1,22 @@
 Groupe 2 : SCHULZ ANTOINE | TOUGGANI YOUSSEF | LEPINETTE NICOLAS
 
+L'API comprends plusieurs entités : 
+  -Livre
+  -Auteur
+  -Commentaire
+  -Catégorie
+  -Micheline qui est l'équivalent d'un User
+  
+Un Livre a un id, un titre, une date de publication, un auteur et une catégorie et un champ Isborrowed pour déterminer si un Micheline l'a emprunté.
+
+Un Auteur a un id, un nom, et une date de naissance.
+
+Un Commentaire a un id et un champ Text qui est en fait le commentaire en lui même.
+
+Une Catégorie a un id et un nom, cette entité n'a en fait que trois tuples possibles : Enfant, Ado et Adulte.
+
+Un Micheline est un user qui a un id, un nom, un âge, afin de déterminer si il peut emprunter ou non certains livres et évantuellement les livres qu'il a emprunter.
+
+Pour chaque entité il est possible, dans l'API, de faire un ajout (add), une modification (update), une recherche par nom, (search/nom), un suppression (delete) et une requête d'affichage de l'entité.
+
+
