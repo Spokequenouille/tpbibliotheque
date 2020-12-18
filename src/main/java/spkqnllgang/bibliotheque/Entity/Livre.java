@@ -11,15 +11,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import lombok.EqualsAndHashCode;
 
 import lombok.*;
 
 @Data
 @Entity
+@Getter
+@Setter
 public class Livre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,15 +27,10 @@ public class Livre {
     private String titre;
     @Column(name = "Date_Of_Publication", nullable = false)
     private Date dateofpublication; 
+    @Column(columnDefinition = "boolean default false")
+    private Boolean isborrowed; 
 
-    @ManyToMany
-    @JoinTable(
-            name = "livre_genre",
-            joinColumns = @JoinColumn(name = "livre_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id")
-    )
-    @JsonIgnoreProperties("livres")
-    private List<Genre> genres;
+
 
     @ManyToMany
     @JoinTable(
@@ -47,4 +40,12 @@ public class Livre {
     )
     @JsonIgnoreProperties("livres")
     private List<Auteur> auteurs;
+
+	public boolean getIsBorrowed() {
+		return false;
+    }
+    
+    public void setIsBorrowed(Boolean isborrowed) {
+        this.isborrowed = isborrowed;
+    }
 }
