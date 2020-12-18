@@ -10,6 +10,5 @@ import spkqnllgang.bibliotheque.Entity.Micheline;
 @RepositoryRestResource(path="micheline")
 public interface MichelineRepository extends JpaRepository<Micheline, Integer>{
 	Set<Micheline> findMichelineByNom(String nom);
-	Set<Micheline> findMichelineByDateOfBirth(Date dateOfBirth);
 	void deleteMichelineById(int id);
 }

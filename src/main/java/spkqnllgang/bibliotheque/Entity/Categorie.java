@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+
 import java.util.*;
 import com.fasterxml.jackson.annotation.*;
 import org.hibernate.annotations.OnDelete;
@@ -14,8 +17,10 @@ import lombok.*;
 
 @Data
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
-public class Genre {
+public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
@@ -23,7 +28,7 @@ public class Genre {
     @Column(nullable = false)
     private String nom;
 
-    @ManyToMany(mappedBy = "genres")
-    @JsonIgnoreProperties("genres")
-    private List<Livre> livres = new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "categorie_id")
+    private List<Livre> livres;
 }
