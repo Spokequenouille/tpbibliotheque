@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "c7a82f02-89c9-4962-9616-80697c9c2e48",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/micheline",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/micheline",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"micheline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/micheline/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/micheline/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"micheline",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/micheline/search/Micheline",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b20iLCJleHAiOjE2MDkxMTM0NTR9.qAAfSxowa0H5FjiPvoxBg0MAaqPNyH08vqmwkJBwm_EHLgnEezq_sGL67HO0SvqJL9PNn9LUNHo2D9bht-zpUg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nom\": \"FPD\",\n    \"livres\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/micheline/search/Micheline",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"micheline",
+						"search",
+						"Micheline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/micheline/update/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b20iLCJleHAiOjE2MDkxMTM0NTR9.qAAfSxowa0H5FjiPvoxBg0MAaqPNyH08vqmwkJBwm_EHLgnEezq_sGL67HO0SvqJL9PNn9LUNHo2D9bht-zpUg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"age\": 24\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/micheline/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"micheline",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/micheline/add/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n        \"nom\": \"Jean test\",\n        \"age\": 12\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/micheline/add/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"micheline",
+						"add",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/micheline/delete/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/micheline/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"micheline",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/livre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/livre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"livre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/livre/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/livre/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"livre",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/livre/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"titre\": \"Un livre\",\n    \"dateofpublication\": \"2019-12-31T23:00:00.000+00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/livre/add/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"livre",
+						"add",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/livre/delete/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"titre\": \"Un livre\",\n    \"dateofpublication\": \"2019-12-31T23:00:00.000+00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/livre/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"livre",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/livre/update/2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titre\": \"Un livre\",\n    \"dateofpublication\": \"2019-12-31T23:00:00.000+00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/livre/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"livre",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/commentaire",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/commentaire",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"commentaire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/commentaire/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/commentaire/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"commentaire",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/commentaire/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Pas mal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/commentaire/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"commentaire",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/commentaire/update/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"update commentaire\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/commentaire/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"commentaire",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/commentaire/delete/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"update commentaire\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/commentaire/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"commentaire",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "http://petstore.swagger.io/v1",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
