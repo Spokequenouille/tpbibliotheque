@@ -1,13 +1,9 @@
 package spkqnllgang.bibliotheque.Repository;
 
-import org.springframework.transaction.annotation.*;
 import java.util.Set;
-
-import javax.persistence.EntityManager;
 
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
